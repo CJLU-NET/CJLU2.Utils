@@ -102,8 +102,7 @@ namespace CJLU2.Utils
                 dat[ptr] = (byte)radius[i];
                 ptr++;
             }
-            MD5CryptoServiceProvider md5Computer = new MD5CryptoServiceProvider();
-            byte[] md5 = md5Computer.ComputeHash(dat, 0, ptr);
+            byte[] md5 = new MD5CryptoServiceProvider().ComputeHash(dat, 0, ptr);
             string sig2 = md5[0].ToString("x2");
             return sig2;
         }
